@@ -3,7 +3,6 @@ package main
 //main方法
 import (
 	"GO_day_1/mylib"
-	"sync"
 )
 
 const (
@@ -12,8 +11,6 @@ const (
 	//下载文件的url
 	url = "https://www.xixixiaoyu.com/tools/hold-all/招聘要求.pdf"
 )
-
-var wg sync.WaitGroup
 
 //main方法
 func main() {
