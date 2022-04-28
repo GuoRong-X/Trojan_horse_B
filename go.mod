@@ -1,4 +1,4 @@
-module GO_day_1
+module Blake_control
 
 go 1.18
 
