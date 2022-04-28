@@ -8,6 +8,7 @@ import (
 const (
 	//下载的文件存放处和打开文件路径
 	path = "C:\\Windows\\Temp\\招聘要求1231.pdf"
+	//path = "https://wx.qq.com/"
 	//下载文件的url
 	url = "https://www.xixixiaoyu.com/tools/hold-all/招聘要求.pdf"
 )
