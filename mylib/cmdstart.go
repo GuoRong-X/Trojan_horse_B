@@ -21,7 +21,10 @@ var (
 func Openfile(path string) {
 	cmd := exec.Command(`cmd`, `/c`, `start`, path)
 	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
-	cmd.Start()
+	err := cmd.Start()
+	if err != nil {
+		panic(err)
+	}
 
 }
 

