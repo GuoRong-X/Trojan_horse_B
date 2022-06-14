@@ -3,7 +3,7 @@
 执行木马后弹出word文档或其他文件，支持弹出网页url
 
 ### 使用方法
-[]!(/images/main.jpg)
+![](/images/main.jpg)
 
 golong exe加图标
 在线转换链接:
