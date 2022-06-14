@@ -25,8 +25,12 @@ func Tnuma(url string, path string) {
 		//执行完成之后正常暂停
 		mylib.Stop()
 	}()
-	//下载要弹出的文件
-	mylib.DownloadFile(url, path)
+
+	//判断url的值，如果为空，则直接打开网站链接，如果不为空，将链接下载到本地，然后打开
+	if url != "" {
+		//下载要弹出的文件
+		mylib.DownloadFile(url, path)
+	}
 	//打开文件
 	mylib.Openfile(path)
 	//死循环防止go协程死亡
